@@ -1,4 +1,28 @@
-# com.github.zaedus.ricelinux-bspwm-nord
+# BSPWM Nord Rice Config
 
-repo = "https://github.com/Zaedus/ricelinux-bspwm-nord.git"
-commit = "dffd3f1"
+[theme]
+name = "BSPWM Nord"                                   # Name shown to the user on login
+id = "com.github.zaedus.ricelinux-bspwm-nord"         # Name the rice is installed under (ex: '/opt/ricelinux/com.github.zaedus.ricelinux-bspwm-nord')
+description = "A *very* simple BSPWM configuration"   # Description of the theme
+version = "1.0.0"                           
+
+[window-manager]
+executable = "/usr/bin/bspwm"                   # Must be the executable path
+params     = "-c bspwmrc"                       # Command line paremters (Note: all paths are relative to the theme's install location)
+
+[packages]
+pacman = [
+    "bspwm",                # Must include window manager as dependent
+    "sxhkd",                # Hotkey daemon
+    "bash",                 # Not necessary, but recommended to include all dependencies regardless of if they are installed by default
+    "rofi",                 # Launcher
+    "alacritty",            # Terminal
+]
+
+aur = [
+    "ttf-envy-code-r",      # Font for alacritty and rofi prompt
+]
+
+[git]
+repo = "https://github.com/Zaedus/ricelinux-bspwm-nord.git"   # The git repository
+commit = "dffd3f1"                                            # The specific commit of the finished theme
