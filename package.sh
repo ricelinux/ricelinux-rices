@@ -43,5 +43,9 @@ for FILE in $FILES; do
     echo "Done!"
 done
 
+echo -n "Writting $DB... "
 echo "$CONTENT" > $DB
-echo "Wrote $DB"
+echo "Done!"
+echo -n "Writting $DB.sig... "
+sha256sum $DB | awk '{print $1}' > $DB.sig
+echo "Done!"
