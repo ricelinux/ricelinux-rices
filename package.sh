@@ -46,6 +46,6 @@ done
 echo -n "Writting $DB... "
 echo "$CONTENT" > $DB
 echo "Done!"
-echo -n "Writting $DB.sig... "
-sha256sum $DB | awk '{print $1}' > $DB.sig
+echo -n "Writting $DB.sha256sum... "
+sha256sum $DB | awk '{print $1}' > $DB.sha256sum
 echo "Done!"
