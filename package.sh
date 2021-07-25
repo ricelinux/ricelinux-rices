@@ -3,6 +3,13 @@
 # Dependencies:
 # - toml-cli (cargo install toml-cli)
 
+TOML="$HOME/.cargo/bin/toml"
+
+if [ ! -f "$TOML" ]; then
+    echo "You must install 'toml-cli' to be able to run this"
+    exit 1
+fi
+
 cr=`echo $'\n.'`
 cr=${cr%.}
 
@@ -24,12 +31,12 @@ for FILE in $FILES; do
     echo -n "Preparing $FILE's info... "
 
     for FIELD in ${FIELDS[@]}; do
-        CONTENT+="$(toml get $RICES/$FILE $FIELD | tr -d '"'),"
+        CONTENT+="$($TOML get $RICES/$FILE $FIELD | tr -d '"'),"
     done
 
     PKGS=""
-    PACMAN_PKGS=$(toml get $RICES/$FILE packages.pacman | tr -d '[]\"' | sed "s/\\,/ /g")
-    AUR_PKGS=$(toml get $RICES/$FILE packages.aur | tr -d '[]\"' | sed "s/\\,/ /g")
+    PACMAN_PKGS=$($TOML get $RICES/$FILE packages.pacman | tr -d '[]\"' | sed "s/\\,/ /g")
+    AUR_PKGS=$($TOML get $RICES/$FILE packages.aur | tr -d '[]\"' | sed "s/\\,/ /g")
     
     for PACMAN_PKG in $PACMAN_PKGS; do
         PKGS="$PKGS""pacman/$PACMAN_PKG;"
@@ -43,9 +50,11 @@ for FILE in $FILES; do
     echo "Done!"
 done
 
+HASH=$(sha256sum $DB | awk '{print $1}')
+
 echo -n "Writting $DB... "
 echo "$CONTENT" > $DB
 echo "Done!"
 echo -n "Writting $DB.sha256sum... "
-sha256sum $DB | awk '{print $1}' > $DB.sha256sum
+echo ${HASH^^} > $DB.sha256sum
 echo "Done!"
