@@ -50,11 +50,12 @@ for FILE in $FILES; do
     echo "Done!"
 done
 
-HASH=$(sha256sum $DB | awk '{print $1}')
-
 echo -n "Writting $DB... "
 echo "$CONTENT" > $DB
 echo "Done!"
+
+HASH=$(sha256sum $DB | awk '{print $1}')
+
 echo -n "Writting $DB.sha256sum... "
 echo ${HASH^^} > $DB.sha256sum
 echo "Done!"
