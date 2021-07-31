@@ -43,7 +43,7 @@ for FILE in $FILES; do
     done
 
     for AUR_PKG in $AUR_PKGS; do
-        PKGS="$PKGS""pacman/$AUR_PKG;"
+        PKGS="$PKGS""aur/$AUR_PKG;"
     done
 
     CONTENT+="$PKGS$cr"
