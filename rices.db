@@ -1,2 +1,2 @@
-BSPWM Nord,com.github.zaedus.ricelinux-bspwm-nord,A *very* simple BSPWM configuration,1.0.0,bspwm,pacman/bspwm;pacman/sxhkd;pacman/bash;pacman/rofi;pacman/alacritty;pacman/ttf-envy-code-r;
+ricelinux-bspwm-nord,com.github.zaedus.ricelinux-bspwm-nord,A *very* simple BSPWM configuration,1.0.0,bspwm,pacman/bspwm;pacman/sxhkd;pacman/bash;pacman/rofi;pacman/alacritty;aur/ttf-envy-code-r;
 
