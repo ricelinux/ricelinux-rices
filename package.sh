@@ -46,7 +46,8 @@ for FILE in $FILES; do
         PKGS="$PKGS""aur/$AUR_PKG;"
     done
 
-    CONTENT+="$PKGS$cr"
+    CONTENT+="$PKGS,"
+    CONTENT+="$(sha256sum $DB | awk '{print $1}')$cr"
     echo "Done!"
 done
 
