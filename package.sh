@@ -45,9 +45,11 @@ for FILE in $FILES; do
     for AUR_PKG in $AUR_PKGS; do
         PKGS="$PKGS""aur/$AUR_PKG;"
     done
+    
+    RICE_HASH=$(sha256sum $RICES/$FILE | awk '{print $1}')
 
     CONTENT+="$PKGS,"
-    CONTENT+="$(sha256sum $DB | awk '{print $1}')$cr"
+    CONTENT+="${RICE_HASH^^}$cr"
     echo "Done!"
 done
 
