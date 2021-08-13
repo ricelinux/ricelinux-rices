@@ -27,4 +27,4 @@ aur = [
 
 [git]
 repo = "https://github.com/Zaedus/ricelinux-bspwm-nord.git"   # The git repository
-commit = "f0ccf8247d4e75cd0732f41d705e22570b3bdd1f"           # The specific commit of the finished theme
+commit = "8ce0d92c7594240d648a4d66328be45386d6822f"           # The specific commit of the finished theme
