@@ -4,7 +4,7 @@
 name        = "ricelinux-bspwm-nord"                         # Name shown to the user on login
 id          = "com.github.zaedus.ricelinux-bspwm-nord"       # Name the rice is installed under (ex: '/opt/ricelinux/com.github.zaedus.ricelinux-bspwm-nord')
 description = "A *very* simple BSPWM configuration"          # Description of the theme
-version     = "1.0.1"                                        # Version of the theme
+version     = "1.0.2"                                        # Version of the theme
 
 [window-manager]
 name           = "bspwm"                            # Name of the window manager
@@ -27,4 +27,4 @@ aur = [
 
 [git]
 repo = "https://github.com/Zaedus/ricelinux-bspwm-nord.git"   # The git repository
-commit = "e8065f80c6258730065462588b3c84961862d68a"           # The specific commit of the finished theme
+commit = "3a950a77e845f2134b77644b72cc6a638deb23b4"           # The specific commit of the finished theme
