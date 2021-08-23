@@ -4,7 +4,7 @@
 name        = "ricelinux-bspwm-nord"                         # Name shown to the user on login
 id          = "com.github.zaedus.ricelinux-bspwm-nord"       # Name the rice is installed under (ex: '/opt/ricelinux/com.github.zaedus.ricelinux-bspwm-nord')
 description = "A *very* simple BSPWM configuration"          # Description of the theme
-version     = "1.0.3"                                        # Version of the theme
+version     = "1.0.4"                                        # Version of the theme
 
 [window-manager]
 name           = "bspwm"                            # Name of the window manager
