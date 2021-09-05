@@ -17,7 +17,6 @@ RICES=rices
 FILES=$(ls $RICES)
 FIELDS=(
     theme.name
-    theme.id
     theme.description
     theme.version
     window-manager.name
